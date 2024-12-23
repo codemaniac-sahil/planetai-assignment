@@ -1,0 +1,399 @@
+2024-10-27 14:15:58,691 - main - INFO - Uploaded file size: 226450 bytes
+2024-10-27 14:15:58,746 - main - INFO - Extracted text length: 2827 characters
+2024-10-27 14:15:58,746 - main - INFO - Document uploaded with ID: 1
+2024-10-27 14:16:10,751 - main - ERROR - OpenAI API key not found.
+2024-10-27 14:16:10,751 - main - ERROR - Error during question processing
+Traceback (most recent call last):
+  File "D:\reactProject\planetAi\backend\main.py", line 100, in ask_question
+    raise HTTPException(status_code=500, detail="API key missing.")
+fastapi.exceptions.HTTPException: 500: API key missing.
+2024-10-27 14:20:20,747 - main - INFO - Uploaded file size: 226450 bytes
+2024-10-27 14:20:20,770 - main - INFO - Extracted text length: 2827 characters
+2024-10-27 14:20:20,771 - main - INFO - Document uploaded with ID: 1
+2024-10-27 14:20:34,464 - main - ERROR - Error during question processing
+Traceback (most recent call last):
+  File "D:\reactProject\planetAi\backend\main.py", line 109, in ask_question
+    answer = await chain.arun({"question": request.question, "text_chunks": text_chunks})
+                   ^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\pydantic\main.py", line 856, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'RunnableSequence' object has no attribute 'arun'
+2024-10-27 14:21:48,786 - main - INFO - Uploaded file size: 226450 bytes
+2024-10-27 14:21:48,807 - main - INFO - Extracted text length: 2827 characters
+2024-10-27 14:21:48,807 - main - INFO - Document uploaded with ID: 1
+2024-10-27 14:22:01,563 - main - ERROR - Error during question processing
+Traceback (most recent call last):
+  File "D:\reactProject\planetAi\backend\main.py", line 109, in ask_question
+    answer = await chain.acall({"question": request.question, "text_chunks": text_chunks})
+                   ^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\pydantic\main.py", line 856, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'RunnableSequence' object has no attribute 'acall'
+2024-10-27 14:24:15,228 - main - INFO - Uploaded file size: 226450 bytes
+2024-10-27 14:24:15,246 - main - INFO - Extracted text length: 2827 characters
+2024-10-27 14:24:15,246 - main - INFO - Document uploaded with ID: 1
+2024-10-27 14:24:25,304 - main - ERROR - Error during question processing
+Traceback (most recent call last):
+  File "D:\reactProject\planetAi\backend\main.py", line 109, in ask_question
+    answer = chain.run({"question": request.question, "text_chunks": text_chunks})
+             ^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\pydantic\main.py", line 856, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'RunnableSequence' object has no attribute 'run'
+2024-10-27 14:30:50,749 - main - INFO - Uploaded file size: 226450 bytes
+2024-10-27 14:30:50,769 - main - INFO - Extracted text length: 2827 characters
+2024-10-27 14:30:50,769 - main - INFO - Document uploaded with ID: 2
+2024-10-27 14:30:57,554 - main - ERROR - Document with ID 2 not found.
+2024-10-27 14:39:01,694 - main - INFO - Uploaded file size: 226450 bytes
+2024-10-27 14:39:01,738 - main - INFO - Extracted text length: 2827 characters
+2024-10-27 14:39:01,738 - main - INFO - Document uploaded with ID: 1
+2024-10-27 14:39:09,878 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 429 Too Many Requests"
+2024-10-27 14:39:09,878 - openai._base_client - INFO - Retrying request to /completions in 0.441867 seconds
+2024-10-27 14:39:11,280 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 429 Too Many Requests"
+2024-10-27 14:39:11,281 - openai._base_client - INFO - Retrying request to /completions in 0.792014 seconds
+2024-10-27 14:39:12,486 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 429 Too Many Requests"
+2024-10-27 14:39:12,494 - main - ERROR - Error during question processing
+Traceback (most recent call last):
+  File "D:\reactProject\planetAi\backend\main.py", line 118, in ask_question
+    answer = await chain.ainvoke({"question": request.question, "text_chunks": text_chunks})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3066, in ainvoke
+    input = await asyncio.create_task(part(), context=context)  # type: ignore
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\langchain_core\language_models\llms.py", line 413, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\langchain_core\language_models\llms.py", line 765, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\langchain_core\language_models\llms.py", line 1190, in agenerate
+    output = await self._agenerate_helper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\langchain_core\language_models\llms.py", line 1030, in _agenerate_helper
+    raise e
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\langchain_core\language_models\llms.py", line 1014, in _agenerate_helper
+    await self._agenerate(
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\langchain_openai\llms\base.py", line 409, in _agenerate
+    response = await self.async_client.create(prompt=_prompts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\openai\resources\completions.py", line 1081, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\openai\_base_client.py", line 1838, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\openai\_base_client.py", line 1532, in request
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\openai\_base_client.py", line 1618, in _request
+    return await self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\openai\_base_client.py", line 1665, in _retry_request
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\openai\_base_client.py", line 1618, in _request
+    return await self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\openai\_base_client.py", line 1665, in _retry_request
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\openai\_base_client.py", line 1633, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2024-10-27 14:39:50,124 - main - INFO - Uploaded file size: 226450 bytes
+2024-10-27 14:39:50,131 - main - INFO - Extracted text length: 2827 characters
+2024-10-27 14:39:50,140 - main - INFO - Document uploaded with ID: 2
+2024-10-27 14:40:07,911 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 429 Too Many Requests"
+2024-10-27 14:40:07,911 - openai._base_client - INFO - Retrying request to /completions in 0.396484 seconds
+2024-10-27 14:40:08,741 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 429 Too Many Requests"
+2024-10-27 14:40:08,741 - openai._base_client - INFO - Retrying request to /completions in 0.947402 seconds
+2024-10-27 14:40:10,128 - httpx - INFO - HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 429 Too Many Requests"
+2024-10-27 14:40:10,130 - main - ERROR - Error during question processing
+Traceback (most recent call last):
+  File "D:\reactProject\planetAi\backend\main.py", line 118, in ask_question
+    answer = await chain.ainvoke({"question": request.question, "text_chunks": text_chunks})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\langchain_core\runnables\base.py", line 3066, in ainvoke
+    input = await asyncio.create_task(part(), context=context)  # type: ignore
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\langchain_core\language_models\llms.py", line 413, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\langchain_core\language_models\llms.py", line 765, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\langchain_core\language_models\llms.py", line 1190, in agenerate
+    output = await self._agenerate_helper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\langchain_core\language_models\llms.py", line 1030, in _agenerate_helper
+    raise e
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\langchain_core\language_models\llms.py", line 1014, in _agenerate_helper
+    await self._agenerate(
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\langchain_openai\llms\base.py", line 409, in _agenerate
+    response = await self.async_client.create(prompt=_prompts, **params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\openai\resources\completions.py", line 1081, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\openai\_base_client.py", line 1838, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\openai\_base_client.py", line 1532, in request
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\openai\_base_client.py", line 1618, in _request
+    return await self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\openai\_base_client.py", line 1665, in _retry_request
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\openai\_base_client.py", line 1618, in _request
+    return await self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\openai\_base_client.py", line 1665, in _retry_request
+    return await self._request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\openai\_base_client.py", line 1633, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2024-10-27 15:11:29,079 - main - INFO - Uploaded file size: 226450 bytes
+2024-10-27 15:11:29,129 - main - INFO - Extracted text length: 2827 characters
+2024-10-27 15:11:29,129 - main - INFO - Document uploaded with ID: 1
+2024-10-27 15:20:11,889 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-10-27 15:20:11,890 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-10-27 15:21:15,161 - main - INFO - Uploaded file size: 226450 bytes
+2024-10-27 15:21:15,217 - main - INFO - Extracted text length: 2827 characters
+2024-10-27 15:21:15,217 - main - INFO - Document uploaded with ID: 1
+2024-10-27 19:08:52,428 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-10-27 19:08:52,428 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-10-27 19:08:55,175 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-10-27 19:08:55,175 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-10-27 19:25:07,214 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-10-27 19:25:07,215 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-10-27 19:25:10,961 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-10-27 19:25:10,962 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-10-27 19:39:43,540 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-10-27 19:39:43,540 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-10-27 19:46:47,530 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-10-27 19:46:47,530 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-10-27 19:48:49,575 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-10-27 19:48:49,575 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-10-27 19:49:08,137 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-10-27 19:49:08,137 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-10-27 19:50:06,320 - main - INFO - Uploaded file size: 705039 bytes
+2024-10-27 19:50:06,382 - main - INFO - Extracted text length: 20120 characters
+2024-10-27 19:50:06,385 - main - INFO - Document uploaded with ID: 1
+2024-10-27 20:10:52,793 - main - INFO - Uploaded file size: 705039 bytes
+2024-10-27 20:10:53,095 - main - INFO - Extracted text length: 20120 characters
+2024-10-27 20:10:53,249 - main - INFO - Document uploaded with ID: 2
+2024-10-27 20:12:22,339 - main - INFO - Uploaded file size: 705039 bytes
+2024-10-27 20:12:22,446 - main - INFO - Extracted text length: 20120 characters
+2024-10-27 20:12:22,461 - main - INFO - Document uploaded with ID: 3
+2024-10-27 20:17:10,105 - main - INFO - Uploaded file size: 410790 bytes
+2024-10-27 20:17:10,237 - main - INFO - Extracted text length: 19130 characters
+2024-10-27 20:17:10,246 - main - INFO - Document uploaded with ID: 4
+2024-10-27 20:52:23,024 - main - INFO - Uploaded file size: 593258 bytes
+2024-10-27 20:52:23,081 - main - INFO - Extracted text length: 15357 characters
+2024-10-27 20:52:23,103 - main - INFO - Document uploaded with ID: 5
+2024-10-27 20:52:41,798 - main - INFO - Uploaded file size: 154938 bytes
+2024-10-27 20:52:41,813 - main - INFO - Extracted text length: 1980 characters
+2024-10-27 20:52:41,818 - main - INFO - Document uploaded with ID: 6
+2024-10-27 21:01:47,463 - main - INFO - Uploaded file size: 598898 bytes
+2024-10-27 21:01:47,501 - main - INFO - Extracted text length: 17325 characters
+2024-10-27 21:01:47,506 - main - INFO - Document uploaded with ID: 7
+2024-10-27 21:09:41,861 - main - ERROR - Error during question processing
+Traceback (most recent call last):
+  File "D:\reactProject\planetAi\backend\main.py", line 120, in ask_question
+    result = qa_pipeline(question=request.question, context=chunk)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\transformers\pipelines\question_answering.py", line 396, in __call__
+    examples = self._args_parser(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\transformers\pipelines\question_answering.py", line 227, in __call__
+    inputs[i] = self.normalize(item)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\transformers\pipelines\question_answering.py", line 169, in normalize
+    raise ValueError(f"`{k}` cannot be empty")
+ValueError: `question` cannot be empty
+2024-10-27 21:10:41,010 - main - INFO - Uploaded file size: 151905 bytes
+2024-10-27 21:10:41,021 - main - INFO - Extracted text length: 1973 characters
+2024-10-27 21:10:41,025 - main - INFO - Document uploaded with ID: 8
+2024-10-27 21:15:49,427 - main - INFO - Uploaded file size: 151058 bytes
+2024-10-27 21:15:49,442 - main - INFO - Extracted text length: 1973 characters
+2024-10-27 21:15:49,446 - main - INFO - Document uploaded with ID: 9
+2024-10-27 21:15:50,633 - main - ERROR - Error during question processing
+Traceback (most recent call last):
+  File "D:\reactProject\planetAi\backend\main.py", line 120, in ask_question
+    result = qa_pipeline(question=request.question, context=chunk)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\transformers\pipelines\question_answering.py", line 396, in __call__
+    examples = self._args_parser(*args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\transformers\pipelines\question_answering.py", line 227, in __call__
+    inputs[i] = self.normalize(item)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "d:\reactProject\planetAi\.venv\Lib\site-packages\transformers\pipelines\question_answering.py", line 169, in normalize
+    raise ValueError(f"`{k}` cannot be empty")
+ValueError: `question` cannot be empty
+2024-10-27 21:23:57,913 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-10-27 21:23:57,914 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-10-28 12:43:28,057 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-10-28 12:43:28,057 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-10-28 12:43:33,707 - main - INFO - Uploaded file size: 103812 bytes
+2024-10-28 12:43:33,752 - main - INFO - Extracted text length: 2978 characters
+2024-10-28 12:43:33,764 - main - INFO - Document uploaded with ID: 10
+2024-10-28 12:45:23,543 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-10-28 12:45:23,543 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-10-28 12:46:10,559 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-10-28 12:46:10,560 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-10-28 12:46:24,350 - main - ERROR - Document with ID 10 not found. Available IDs: []
+2024-10-28 12:46:43,159 - main - ERROR - Document with ID 10 not found. Available IDs: []
+2024-10-28 12:46:54,131 - main - INFO - Uploaded file size: 103812 bytes
+2024-10-28 12:46:54,178 - main - INFO - Extracted text length: 2978 characters
+2024-10-28 12:46:54,187 - main - INFO - Document uploaded with ID: 11
+2024-10-28 12:49:32,963 - main - INFO - Uploaded file size: 103812 bytes
+2024-10-28 12:49:33,063 - main - INFO - Extracted text length: 2978 characters
+2024-10-28 12:49:33,080 - main - INFO - Document uploaded with ID: 12
+2024-10-28 12:53:03,689 - main - INFO - Uploaded file size: 161343 bytes
+2024-10-28 12:53:03,734 - main - INFO - Extracted text length: 2068 characters
+2024-10-28 12:53:03,741 - main - INFO - Document uploaded with ID: 13
+2024-10-28 12:57:12,941 - main - INFO - Uploaded file size: 161343 bytes
+2024-10-28 12:57:12,967 - main - INFO - Extracted text length: 2068 characters
+2024-10-28 12:57:12,980 - main - INFO - Document uploaded with ID: 14
+2024-10-28 12:58:50,638 - main - INFO - Uploaded file size: 161343 bytes
+2024-10-28 12:58:50,701 - main - INFO - Extracted text length: 2068 characters
+2024-10-28 12:58:50,704 - main - INFO - Document uploaded with ID: 15
+2024-10-28 12:59:05,534 - main - INFO - Uploaded file size: 705039 bytes
+2024-10-28 12:59:05,571 - main - INFO - Extracted text length: 20120 characters
+2024-10-28 12:59:05,577 - main - INFO - Document uploaded with ID: 16
+2024-10-28 13:06:25,914 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-10-28 13:06:25,914 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-10-28 13:07:36,215 - main - INFO - Uploaded file size: 705039 bytes
+2024-10-28 13:07:36,243 - main - INFO - Extracted text length: 20120 characters
+2024-10-28 13:07:36,253 - main - INFO - Document uploaded with ID: 17
+2024-10-28 13:17:56,805 - main - INFO - Uploaded file size: 705039 bytes
+2024-10-28 13:17:56,952 - main - INFO - Extracted text length: 20120 characters
+2024-10-28 13:17:56,978 - main - INFO - Document uploaded with ID: 18
+2024-10-28 13:18:32,323 - main - INFO - Uploaded file size: 705039 bytes
+2024-10-28 13:18:32,418 - main - INFO - Extracted text length: 20120 characters
+2024-10-28 13:18:32,422 - main - INFO - Document uploaded with ID: 19
+2024-10-28 13:22:31,166 - main - INFO - Uploaded file size: 631665 bytes
+2024-10-28 13:22:31,265 - main - INFO - Extracted text length: 11454 characters
+2024-10-28 13:22:31,270 - main - INFO - Document uploaded with ID: 20
+2024-11-04 23:36:15,886 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-11-04 23:36:15,886 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-11-05 13:09:50,008 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-11-05 13:09:50,008 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-11-05 13:14:26,955 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-11-05 13:14:26,957 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-11-05 13:14:45,107 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-11-05 13:14:45,107 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-11-05 13:15:10,913 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-11-05 13:15:10,913 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-11-05 13:15:14,525 - main - INFO - Uploaded file size: 226367 bytes
+2024-11-05 13:15:14,615 - main - INFO - Extracted text length: 2800 characters
+2024-11-05 13:15:14,631 - main - INFO - Document uploaded with ID: 21
+2024-11-05 13:21:00,277 - main - INFO - Uploaded file size: 1321225 bytes
+2024-11-05 13:21:00,515 - main - INFO - Extracted text length: 372 characters
+2024-11-05 13:21:00,629 - main - INFO - Document uploaded with ID: 22
+2024-11-05 13:23:02,617 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-11-05 13:23:02,617 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-11-05 13:23:25,631 - main - INFO - Uploaded file size: 1321225 bytes
+2024-11-05 13:23:25,705 - main - INFO - Extracted text length: 372 characters
+2024-11-05 13:23:25,730 - main - INFO - Document uploaded with ID: 23
+2024-11-05 13:26:18,350 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-11-05 13:26:18,350 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-11-05 13:27:26,088 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-11-05 13:27:26,088 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-11-05 13:27:30,715 - main - INFO - Received title: None
+2024-11-05 13:27:30,715 - main - INFO - Uploaded file size: 1321225 bytes
+2024-11-05 13:27:30,790 - main - INFO - Extracted text length: 372 characters
+2024-11-05 13:27:30,814 - main - INFO - Document uploaded with ID: 24
+2024-11-05 13:27:38,331 - main - INFO - Received title: None
+2024-11-05 13:27:38,332 - main - INFO - Uploaded file size: 1321225 bytes
+2024-11-05 13:27:38,342 - main - INFO - Extracted text length: 372 characters
+2024-11-05 13:27:38,354 - main - INFO - Document uploaded with ID: 25
+2024-11-05 13:30:04,568 - main - INFO - Received title: None
+2024-11-05 13:30:04,571 - main - INFO - Uploaded file size: 1321225 bytes
+2024-11-05 13:30:04,578 - main - INFO - Extracted text length: 372 characters
+2024-11-05 13:30:04,589 - main - INFO - Document uploaded with ID: 26
+2024-11-05 13:33:01,984 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-11-05 13:33:01,984 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-11-05 13:33:22,488 - main - INFO - Received title: pract5 screenshot1.pdf
+2024-11-05 13:33:22,495 - main - INFO - Uploaded file size: 1321225 bytes
+2024-11-05 13:33:22,514 - main - INFO - Extracted text length: 372 characters
+2024-11-05 13:33:22,537 - main - INFO - Document uploaded with ID: 27
+2024-12-23 10:16:07,221 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-12-23 10:16:07,222 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-12-23 10:20:01,812 - main - INFO - Received title: sahil_bisht_resume.pdf
+2024-12-23 10:20:01,813 - main - INFO - Uploaded file size: 127356 bytes
+2024-12-23 10:20:02,004 - main - INFO - Extracted text length: 3555 characters
+2024-12-23 10:20:02,017 - main - INFO - Document uploaded with ID: 28
+2024-12-23 10:25:24,909 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-12-23 10:25:24,910 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-12-23 10:33:11,716 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-12-23 10:33:11,716 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-12-23 10:33:36,867 - main - INFO - Received title: sahil_bisht_resume.pdf
+2024-12-23 10:33:36,868 - main - INFO - Uploaded file size: 127356 bytes
+2024-12-23 10:33:36,939 - main - INFO - Extracted text length: 3555 characters
+2024-12-23 10:33:36,964 - main - INFO - Document uploaded with ID: 1
+2024-12-23 10:33:39,254 - main - INFO - Received title: sahil_bisht_resume.pdf
+2024-12-23 10:33:39,255 - main - INFO - Uploaded file size: 127356 bytes
+2024-12-23 10:33:39,273 - main - INFO - Extracted text length: 3555 characters
+2024-12-23 10:33:39,286 - main - INFO - Document uploaded with ID: 2
+2024-12-23 10:33:41,003 - main - INFO - Received title: sahil_bisht_resume.pdf
+2024-12-23 10:33:41,004 - main - INFO - Uploaded file size: 127356 bytes
+2024-12-23 10:33:41,019 - main - INFO - Extracted text length: 3555 characters
+2024-12-23 10:33:41,036 - main - INFO - Document uploaded with ID: 3
+2024-12-23 10:33:45,315 - main - INFO - Received title: sahil_bisht_resume.pdf
+2024-12-23 10:33:45,317 - main - INFO - Uploaded file size: 127356 bytes
+2024-12-23 10:33:45,332 - main - INFO - Extracted text length: 3555 characters
+2024-12-23 10:33:45,346 - main - INFO - Document uploaded with ID: 4
+2024-12-23 10:34:00,054 - main - INFO - Received title: sahil_bisht_resume.pdf
+2024-12-23 10:34:00,054 - main - INFO - Uploaded file size: 127356 bytes
+2024-12-23 10:34:00,069 - main - INFO - Extracted text length: 3555 characters
+2024-12-23 10:34:00,084 - main - INFO - Document uploaded with ID: 5
+2024-12-23 10:34:11,219 - main - INFO - Received title: sahil_bisht_resume.pdf
+2024-12-23 10:34:11,220 - main - INFO - Uploaded file size: 127356 bytes
+2024-12-23 10:34:11,252 - main - INFO - Extracted text length: 3555 characters
+2024-12-23 10:34:11,271 - main - INFO - Document uploaded with ID: 6
+2024-12-23 10:34:13,770 - main - INFO - Received title: sahil_bisht_resume.pdf
+2024-12-23 10:34:13,770 - main - INFO - Uploaded file size: 127356 bytes
+2024-12-23 10:34:13,788 - main - INFO - Extracted text length: 3555 characters
+2024-12-23 10:34:13,799 - main - INFO - Document uploaded with ID: 7
+2024-12-23 10:34:14,690 - main - INFO - Received title: sahil_bisht_resume.pdf
+2024-12-23 10:34:14,690 - main - INFO - Uploaded file size: 127356 bytes
+2024-12-23 10:34:14,706 - main - INFO - Extracted text length: 3555 characters
+2024-12-23 10:34:14,721 - main - INFO - Document uploaded with ID: 8
+2024-12-23 10:34:15,033 - main - INFO - Received title: sahil_bisht_resume.pdf
+2024-12-23 10:34:15,033 - main - INFO - Uploaded file size: 127356 bytes
+2024-12-23 10:34:15,052 - main - INFO - Extracted text length: 3555 characters
+2024-12-23 10:34:15,065 - main - INFO - Document uploaded with ID: 9
+2024-12-23 10:34:15,235 - main - INFO - Received title: sahil_bisht_resume.pdf
+2024-12-23 10:34:15,235 - main - INFO - Uploaded file size: 127356 bytes
+2024-12-23 10:34:15,248 - main - INFO - Extracted text length: 3555 characters
+2024-12-23 10:34:15,256 - main - INFO - Document uploaded with ID: 10
+2024-12-23 10:34:15,425 - main - INFO - Received title: sahil_bisht_resume.pdf
+2024-12-23 10:34:15,425 - main - INFO - Uploaded file size: 127356 bytes
+2024-12-23 10:34:15,439 - main - INFO - Extracted text length: 3555 characters
+2024-12-23 10:34:15,448 - main - INFO - Document uploaded with ID: 11
+2024-12-23 10:34:15,655 - main - INFO - Received title: sahil_bisht_resume.pdf
+2024-12-23 10:34:15,655 - main - INFO - Uploaded file size: 127356 bytes
+2024-12-23 10:34:15,672 - main - INFO - Extracted text length: 3555 characters
+2024-12-23 10:34:15,682 - main - INFO - Document uploaded with ID: 12
+2024-12-23 10:35:38,038 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-12-23 10:35:38,038 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-12-23 10:35:55,058 - main - INFO - Received title: sahil_bisht_resume.pdf
+2024-12-23 10:35:55,060 - main - INFO - Uploaded file size: 127356 bytes
+2024-12-23 10:35:55,149 - main - INFO - Extracted text length: 3555 characters
+2024-12-23 10:35:55,178 - main - INFO - Document uploaded with ID: 1
+2024-12-23 10:36:07,947 - main - INFO - Received title: sahil_bisht_resume.pdf
+2024-12-23 10:36:07,948 - main - INFO - Uploaded file size: 127356 bytes
+2024-12-23 10:36:07,981 - main - INFO - Extracted text length: 3555 characters
+2024-12-23 10:36:08,000 - main - INFO - Document uploaded with ID: 2
+2024-12-23 10:41:42,497 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2024-12-23 10:41:42,498 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2024-12-23 10:42:10,653 - main - INFO - Received title: sahil_bisht_resume.pdf
+2024-12-23 10:42:10,653 - main - INFO - Uploaded file size: 127356 bytes
+2024-12-23 10:42:10,691 - main - INFO - Extracted text length: 3555 characters
+2024-12-23 10:42:10,705 - main - INFO - Document uploaded with ID: 1
